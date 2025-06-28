@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 448px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-top: 32px;
+        }
+
+        .logo {
+            margin-bottom: 16px;
+        }
+
+        .logo svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .tickets-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ticket-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .ticket-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ticket-info {
+            flex: 1;
+        }
+
+        .ticket-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .country-code {
+            font-size: 14px;
+            font-weight: 500;
+            color: #4b5563;
+            background-color: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .location {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .date {
+            color: #6b7280;
+            font-size: 14px;
+            margin-left: 48px;
+        }
+
+        .chevron {
+            width: 20px;
+            height: 20px;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 8px;
+            }
+            
+            .location {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo -->
+        <div class="header">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <!-- Hand gesture logo -->
+                    <path
+                        d="M25 45 C25 35, 35 25, 45 25 C50 25, 55 28, 58 33 C60 28, 65 25, 70 25 C75 25, 80 30, 80 35 C80 40, 75 45, 70 45 L30 45 C27 45, 25 43, 25 40 Z"
+                        fill="#F59E0B"
+                        stroke="#000"
+                        stroke-width="3"
+                    />
+                    <path
+                        d="M30 45 L30 55 C30 60, 35 65, 40 65 C45 65, 50 60, 50 55 L50 45"
+                        fill="#F59E0B"
+                        stroke="#000"
+                        stroke-width="3"
+                    />
+                    <circle cx="35" cy="35" r="3" fill="#000" />
+                </svg>
+            </div>
+            <h1 class="title">Tickets</h1>
+        </div>
+
+        <!-- Tickets List -->
+        <div class="tickets-list">
+            <div class="ticket-card" data-city="Warsaw" data-country="Poland">
+                <div class="ticket-content">
+                    <div class="ticket-info">
+                        <div class="ticket-header">
+                            <span class="country-code">PL</span>
+                            <span class="location">Warsaw, Poland</span>
+                        </div>
+                        <div class="date">Oct 13, 2025</div>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="ticket-card" data-city="Prague" data-country="Czech Republic">
+                <div class="ticket-content">
+                    <div class="ticket-info">
+                        <div class="ticket-header">
+                            <span class="country-code">CZ</span>
+                            <span class="location">Prague, Czech Republic</span>
+                        </div>
+                        <div class="date">Oct 14, 2025</div>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="ticket-card" data-city="Berlin" data-country="Germany">
+                <div class="ticket-content">
+                    <div class="ticket-info">
+                        <div class="ticket-header">
+                            <span class="country-code">DE</span>
+                            <span class="location">Berlin, Germany</span>
+                        </div>
+                        <div class="date">Oct 16, 2025</div>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="ticket-card" data-city="Amsterdam" data-country="Netherlands">
+                <div class="ticket-content">
+                    <div class="ticket-info">
+                        <div class="ticket-header">
+                            <span class="country-code">NL</span>
+                            <span class="location">Amsterdam, Netherlands</span>
+                        </div>
+                        <div class="date">Oct 17, 2025</div>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click event listeners to all ticket cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const ticketCards = document.querySelectorAll('.ticket-card');
+            
+            ticketCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const city = this.getAttribute('data-city');
+                    const country = this.getAttribute('data-country');
+                    
+                    // Log the selection (you can replace this with your desired functionality)
+                    console.log(`Selected: ${city}, ${country}`);
+                    
+                    // Add visual feedback
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // You can add navigation logic here
+                    // For example: window.location.href = `/tickets/${city.toLowerCase()}`;
+                });
+                
+                // Add hover effects
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
